@@ -1,0 +1,4 @@
+
+OTHER_LDFLAGS=$(inherited) -framework Appodeal -framework AdSupport -framework AudioToolbox -framework AVFoundation -framework CFNetwork -framework CoreBluetooth -framework CoreFoundation -framework CoreGraphics -framework CoreImage -framework CoreLocation -framework CoreMedia -framework CoreMotion -framework CoreTelephony -framework CoreText -framework EventKitUI -framework EventKit -framework GLKit -framework ImageIO -framework MediaPlayer -framework MessageUI -framework MobileCoreServices -framework QuartzCore -framework SafariServices -framework Security -framework Social -framework StoreKit -framework Twitter -framework WatchConnectivity -framework WebKit
+
+// NOTE: We may also need to add: libc++, libsqlite3.tbd, libxml2.2.tbd and libz.tbd

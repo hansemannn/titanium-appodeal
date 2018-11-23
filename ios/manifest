@@ -1,0 +1,18 @@
+#
+# this is your module manifest and used by Titanium
+# during compilation, packaging, distribution, etc.
+#
+version: 1.0.0
+apiversion: 2
+architectures: armv7 arm64 i386 x86_64
+description: ti.appodeal
+author: Hans Knöchel
+license: UNLICENSED
+copyright: Copyright (c) 2018 by Thomas Lemaitre
+
+# these should not be edited
+name: ti.appodeal
+moduleid: ti.appodeal
+guid: 1cd6a999-8386-4f54-b81a-6cad6beaae4b
+platform: iphone
+minsdk: 7.0.0
