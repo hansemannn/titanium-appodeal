@@ -1,5 +1,7 @@
 # Titanium Appodeal Module
 
+<img src="./appodeal-logo.png" height="80" />
+
 Support for the native Appodeal SDK (iOS / Android) in Titanium.
 
 ## Build
