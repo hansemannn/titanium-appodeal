@@ -94,28 +94,28 @@ public class TiAppodealModule extends KrollModule
 			@Override
 			public void onInterstitialLoaded(boolean isPrecache) {
 				KrollDict event = new KrollDict();
-				event.put("isPrecache", isPrecache);
-				fireEvent("onInterstitialLoaded", event);
+				event.put("precache", isPrecache);
+				fireEvent("interstitialDidLoadAdIsPrecache", event);
 			}
 			@Override
 			public void onInterstitialFailedToLoad() {
-				fireEvent("onInterstitialFailedToLoad", new KrollDict());
+				fireEvent("interstitialDidFailToLoadAd", new KrollDict());
 			}
 			@Override
 			public void onInterstitialShown() {
-				fireEvent("onInterstitialShown", new KrollDict());
+				fireEvent("interstitialWillPresent", new KrollDict());
 			}
 			@Override
 			public void onInterstitialClicked() {
-				fireEvent("onInterstitialClicked", new KrollDict());
+				fireEvent("interstitialDidClick", new KrollDict());
 			}
 			@Override
 			public void onInterstitialClosed() {
-				fireEvent("onInterstitialClosed", new KrollDict());
+				fireEvent("interstitialDidDismiss", new KrollDict());
 			}
 			@Override
 			public void onInterstitialExpired() {
-				fireEvent("onInterstitialExpired", new KrollDict());
+				fireEvent("interstitialDidExpired", new KrollDict());
 			}
 		});
 
@@ -124,24 +124,24 @@ public class TiAppodealModule extends KrollModule
 			@Override
 			public void onBannerLoaded(int height, boolean isPrecache) {
 				KrollDict event = new KrollDict();
-				event.put("isPrecache", isPrecache);
-				fireEvent("onBannerLoaded", event);
+				event.put("precache", isPrecache);
+				fireEvent("bannerDidLoadAdIsPrecache", event);
 			}
 			@Override
 			public void onBannerFailedToLoad() {
-				fireEvent("onBannerFailedToLoad", new KrollDict());
+				fireEvent("bannerDidFailToLoadAd", new KrollDict());
 			}
 			@Override
 			public void onBannerShown() {
-				fireEvent("onBannerShown", new KrollDict());
+				fireEvent("bannerDidShow", new KrollDict());
 			}
 			@Override
 			public void onBannerClicked() {
-				fireEvent("onBannerClicked", new KrollDict());
+				fireEvent("bannerDidClick", new KrollDict());
 			}
 			@Override
 			public void onBannerExpired() {
-				fireEvent("onBannerExpired", new KrollDict());
+				fireEvent("bannerDidExpired", new KrollDict());
 			}
 		});
 
@@ -150,22 +150,22 @@ public class TiAppodealModule extends KrollModule
 			@Override
 			public void onRewardedVideoLoaded(boolean isPrecache) {
 				KrollDict event = new KrollDict();
-				event.put("isPrecache", isPrecache);
-				fireEvent("onRewardedVideoLoaded", event);
+				event.put("precache", isPrecache);
+				fireEvent("rewardedVideoDidLoadAdIsPrecache", event);
 			}
 			@Override
 			public void onRewardedVideoFailedToLoad() {
-				fireEvent("onRewardedVideoFailedToLoad", new KrollDict());
+				fireEvent("rewardedVideoDidFailToLoadAd", new KrollDict());
 			}
 			@Override
 			public void onRewardedVideoShown() {
-				fireEvent("onRewardedVideoShown", new KrollDict());
+				fireEvent("rewardedVideoDidPresent", new KrollDict());
 			}
 			@Override
 			public void onRewardedVideoFinished(double amount, String name) {
 				KrollDict event = new KrollDict();
-				event.put("amount", amount);
-				event.put("name", name);
+				event.put("rewardAmount", amount);
+				event.put("rewardName", name);
 				fireEvent("onRewardedVideoFinished", event);
 			}
 			@Override
@@ -176,7 +176,7 @@ public class TiAppodealModule extends KrollModule
 			}
 			@Override
 			public void onRewardedVideoExpired() {
-				fireEvent("onRewardedVideoExpired", new KrollDict());
+				fireEvent("rewardedVideoDidExpired", new KrollDict());
 			}
 		});
 
@@ -184,23 +184,23 @@ public class TiAppodealModule extends KrollModule
 		Appodeal.setNativeCallbacks(new NativeCallbacks() {
 			@Override
 			public void onNativeLoaded() {
-				fireEvent("onNativeLoaded", new KrollDict());
+				fireEvent("didLoadNativeAds", new KrollDict());
 			}
 			@Override
 			public void onNativeFailedToLoad() {
-				fireEvent("onNativeFailedToLoad", new KrollDict());
+				fireEvent("didFailToLoadNativeAdsWithError", new KrollDict());
 			}
 			@Override
 			public void onNativeShown(NativeAd nativeAd) {
-				fireEvent("onNativeShown", new KrollDict());
+				fireEvent("nativeAdDidShow", new KrollDict());
 			}
 			@Override
 			public void onNativeClicked(NativeAd nativeAd) {
-				fireEvent("onNativeClicked", new KrollDict());
+				fireEvent("nativeAdDidClick", new KrollDict());
 			}
 			@Override
 			public void onNativeExpired() {
-				fireEvent("onNativeExpired", new KrollDict());
+				fireEvent("nativeAdDidExpired", new KrollDict());
 			}
 		});
 	}
