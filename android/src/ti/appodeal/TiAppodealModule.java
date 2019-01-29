@@ -72,7 +72,7 @@ public class TiAppodealModule extends KrollModule
 		// 	parser.setInput(new StringReader(attributes));
 		// 	parser.next();
 		// 	AttributeSet attrs = Xml.asAttributeSet(parser);
-			
+
 		// 	BannerView bannerView = new BannerView(TiApplication.getAppRootOrCurrentActivity(), attrs);
 
 		// 	if (containerView instanceof TiViewProxy) {
@@ -85,9 +85,9 @@ public class TiAppodealModule extends KrollModule
 		// } catch (IOException e) {
 		// 	e.printStackTrace();
 		// }
-		
+
 		Appodeal.disableLocationPermissionCheck();
-		Appodeal.initialize(TiApplication.getAppRootOrCurrentActivity(), apiKey, Appodeal.INTERSTITIAL | Appodeal.REWARDED_VIDEO | Appodeal.BANNER | Appodeal.NATIVE, hasConsent);
+		Appodeal.initialize(TiApplication.getAppCurrentActivity(), apiKey, Appodeal.INTERSTITIAL | Appodeal.REWARDED_VIDEO | Appodeal.BANNER | Appodeal.NATIVE, hasConsent);
 
 		// Interstitial callbacks
 		Appodeal.setInterstitialCallbacks(new InterstitialCallbacks() {
@@ -250,4 +250,3 @@ public class TiAppodealModule extends KrollModule
 		}
 	}
 }
-
